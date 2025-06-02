@@ -1,15 +1,18 @@
 package org.example.notifications;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+@Component("email")
+@Primary
 public class EmailNotification implements NotificationService {
 
-    @Value("{notification.email.domain}")
+    @Value("${notification.email.domain}")
     private String domain;
 
     @PostConstruct

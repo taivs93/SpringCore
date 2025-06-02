@@ -15,8 +15,8 @@ public class SingletonBean {
         System.out.println("SingletonBean init");
     }
 
-    public int getCount() {
-        return count;
+    public void printCount() {
+        System.out.println("SingletonBean count: " + count);
     }
 
     @PreDestroy

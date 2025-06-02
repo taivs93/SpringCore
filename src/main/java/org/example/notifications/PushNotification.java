@@ -1,15 +1,16 @@
 package org.example.notifications;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+@Component("push")
 public class PushNotification implements NotificationService{
 
-    @Value("{notification.push.title}")
+    @Value("${notification.push.title}")
     private String title;
 
     @PostConstruct

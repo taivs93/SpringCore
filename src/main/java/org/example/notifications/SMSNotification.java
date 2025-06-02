@@ -1,15 +1,16 @@
 package org.example.notifications;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+@Component("sms")
 public class SMSNotification implements NotificationService{
 
-    @Value("notification.sms.prefix")
+    @Value("${notification.sms.prefix}")
     private String prefix;
 
     @PostConstruct

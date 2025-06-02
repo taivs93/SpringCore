@@ -15,8 +15,8 @@ public class PrototypeBean {
         System.out.println("PrototypeBean init");
     }
 
-    public int getCount() {
-        return count;
+    public void printCount() {
+        System.out.println("PrototypeBean count: " + count);
     }
 
     @PreDestroy
